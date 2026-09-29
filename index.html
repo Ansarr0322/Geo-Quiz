@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geo Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Geo Quiz</h1>
+  <p class="sub">AQA A-level Geography · 2 / 4 / 6 mark practice</p>
+</header>
+<main>
+  <section class="card" id="filters">
+    <p class="label">Topic</p>
+    <div class="chips" id="topicChips"></div>
+    <div id="subWrap" class="hidden" style="margin-top:14px">
+      <p class="label">Sub-topic</p>
+      <div class="chips" id="subChips"></div>
+    </div>
+    <p class="label" style="margin-top:14px">Marks</p>
+    <div class="chips" id="markChips"></div>
+    <div class="row" style="margin-top:16px">
+      <span class="hint" id="count"></span>
+      <button class="primary" id="startBtn">Start</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="quiz">
+    <div class="row">
+      <span class="hint" id="progress"></span>
+      <span class="score" id="running"></span>
+    </div>
+    <div class="bar"><i id="barFill"></i></div>
+    <div class="meta" id="meta"></div>
+    <p class="q" id="qtext"></p>
+    <textarea id="answer" placeholder="Write your answer here..."></textarea>
+    <div class="row" style="margin-top:12px">
+      <button class="ghost" id="quitBtn">Back to filters</button>
+      <button class="primary" id="revealBtn">Show mark scheme</button>
+    </div>
+    <div class="scheme hidden" id="scheme">
+      <p class="label">Tick every point you made (max marks apply)</p>
+      <div id="points"></div>
+      <div class="row" style="margin-top:10px">
+        <span class="score" id="qscore"></span>
+        <button class="primary" id="nextBtn">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card hidden" id="done">
+    <h2 style="margin-top:0">Finished</h2>
+    <p class="score" id="final"></p>
+    <div id="wrong"></div>
+    <div class="row" style="margin-top:12px">
+      <button class="ghost" id="againBtn">Back to filters</button>
+      <button class="primary" id="retryWrongBtn">Retry missed questions</button>
+    </div>
+  </section>
+
+  <section class="card" id="history">
+    <p class="label">Questions to revisit</p>
+    <div id="revList" class="hint">Nothing yet. Questions where you drop marks show up here.</div>
+    <div class="row" style="margin-top:10px">
+      <button class="ghost" id="practiceRev">Practise these</button>
+      <button class="ghost" id="clearRev">Clear list</button>
+    </div>
+  </section>
+</main>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
